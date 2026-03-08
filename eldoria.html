@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 ELDORIA ECONOMIC S6 — CAT EDITION 🐾</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0505 0%, #2a1a1a 50%, #1a0f0f 100%);
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Cat Paw Prints Background */
+        body::before {
+            content: "🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 40px;
+            color: rgba(255, 182, 193, 0.05);
+            white-space: nowrap;
+            pointer-events: none;
+            transform: rotate(-15deg) scale(2);
+            z-index: -1;
+            animation: pawFloat 20s linear infinite;
+        }
+        
+        @keyframes pawFloat {
+            from { transform: rotate(-15deg) scale(2) translateX(0); }
+            to { transform: rotate(-15deg) scale(2) translateX(-100px); }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(20, 10, 15, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 80px;
+            padding: 50px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.7), 0 0 0 5px #ffb6c1, 0 0 0 10px #ff69b4, 0 0 50px #ff1493;
+            border: 6px solid gold;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Floating Emojis */
+        .floating-emoji {
+            position: absolute;
+            font-size: 50px;
+            animation: float 6s ease-in-out infinite;
+            z-index: 100;
+            pointer-events: none;
+            filter: drop-shadow(0 0 20px gold);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+        
+        /* ASCII Art Styling - Kotak dengan border tebal */
+        .ascii-header {
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            color: #ffd700;
+            text-shadow: 0 0 30px #ff69b4, 0 0 60px #ff1493, 0 0 90px gold;
+            font-size: 14px;
+            line-height: 1.4;
+            text-align: center;
+            background: linear-gradient(145deg, rgba(255,192,203,0.2), rgba(255,105,180,0.2));
+            padding: 30px;
+            border-radius: 70px;
+            margin-bottom: 40px;
+            border: 8px solid #ffb6c1;
+            box-shadow: 0 0 50px rgba(255,182,193,0.5), 0 20px 0 #8b4513;
+            transform: perspective(1000px) rotateX(2deg);
+            position: relative;
+        }
+        
+        .ascii-header::before {
+            content: "🐱";
+            position: absolute;
+            top: -25px;
+            left: 50px;
+            font-size: 50px;
+            filter: drop-shadow(0 0 20px gold);
+        }
+        
+        .ascii-header::after {
+            content: "😺";
+            position: absolute;
+            bottom: -25px;
+            right: 50px;
+            font-size: 50px;
+            filter: drop-shadow(0 0 20px gold);
+        }
+        
+        /* Welcome Banner - Kotak */
+        .welcome-banner {
+            background: linear-gradient(145deg, #ff69b4, #ff1493, #ffb6c1, #ff8da1);
+            padding: 40px;
+            border-radius: 120px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 30px 0 #8b4513, 0 40px 70px rgba(255,105,180,0.7), 0 0 100px gold;
+            border: 8px solid gold;
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .welcome-banner::before {
+            content: "🐱😺😸😻😽🙀😿😾🐱";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            font-size: 30px;
+            color: rgba(255,255,255,0.3);
+            animation: slideCats 10s linear infinite;
+            white-space: nowrap;
+        }
+        
+        @keyframes slideCats {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100%); }
+        }
+        
+        .welcome-banner:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 40px 0 #8b4513, 0 50px 90px rgba(255,105,180,0.9), 0 0 150px gold;
+        }
+        
+        .welcome-banner h1 {
+            font-size: 5rem;
+            color: white;
+            text-shadow: 0 0 40px gold, 0 0 80px cyan, 0 0 120px magenta;
+            letter-spacing: 6px;
+            font-weight: 800;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .welcome-banner h2 {
+            font-size: 3rem;
+            color: #fffacd;
+            text-shadow: 0 0 30px magenta, 0 0 60px cyan;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Server Info Cards - KOTAK */
+        .server-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .info-card {
+            background: rgba(255, 182, 193, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 8px solid #ffb6c1;
+            border-radius: 80px;
+            padding: 40px;
+            box-shadow: 0 25px 0 #8b4513, 0 40px 70px rgba(255,182,193,0.4);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::after {
+            content: "🐾";
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 150px;
+            opacity: 0.1;
+            transform: rotate(-20deg);
+        }
+        
+        .info-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            border-color: gold;
+            box-shadow: 0 30px 0 #8b4513, 0 50px 90px gold;
+            background: rgba(255, 215, 0, 0.15);
+        }
+        
+        .info-title {
+            font-size: 2.5rem;
+            color: #ffd700;
+            border-bottom: 4px dotted #ff69b4;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-shadow: 0 0 20px gold;
+        }
+        
+        .info-content {
+            font-size: 1.8rem;
+            line-height: 2.2;
+        }
+        
+        .info-content p {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Fitur Grid - KOTAK */
+        .features-section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 4rem;
+            text-align: center;
+            color: #ffd700;
+            text-shadow: 0 0 40px #ff69b4, 0 0 80px gold;
+            margin-bottom: 40px;
+            background: rgba(255,192,203,0.2);
+            padding: 30px;
+            border-radius: 120px;
+            border: 8px solid gold;
+            box-shadow: 0 15px 0 #8b4513;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 6px solid #ffb6c1;
+            border-radius: 60px;
+            padding: 30px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 0 #5a3a2a;
+        }
+        
+        .feature-item::before {
+            content: "🐱";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 40px;
+            opacity: 0.2;
+        }
+        
+        .feature-item:hover {
+            transform: scale(1.05) translateY(-10px);
+            border-color: gold;
+            box-shadow: 0 20px 0 #5a3a2a, 0 0 60px gold;
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-name {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            font-size: 1.4rem;
+            color: #fff;
+            opacity: 0.9;
+        }
+        
+        /* Rank Cards - KOTAK */
+        .rank-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .rank-card {
+            background: linear-gradient(145deg, #2a1a1a, #1f1414);
+            border: 8px solid;
+            border-radius: 70px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 0 #3a2a2a;
+        }
+        
+        .rank-card::before {
+            content: "👑";
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 150px;
+            opacity: 0.1;
+            transform: rotate(30deg);
+        }
+        
+        .rank-card:hover {
+            transform: translateY(-20px) rotate(2deg);
+            box-shadow: 0 30px 0 #3a2a2a, 0 50px 90px gold;
+        }
+        
+        .rank-icon {
+            font-size: 6rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 30px gold);
+        }
+        
+        .rank-name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .rank-price {
+            font-size: 2.5rem;
+            color: #ffd700;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .rank-bonus {
+            font-size: 2rem;
+            background: rgba(255,215,0,0.2);
+            padding: 15px;
+            border-radius: 50px;
+            border: 2px solid gold;
+        }
+        
+        .rank-dead { border-color: #808080; }
+        .rank-legend { border-color: #ff4500; }
+        .rank-diamond { border-color: #00ffff; }
+        .rank-vip { border-color: #ffd700; }
+        .rank-admin { border-color: #ff1493; }
+        
+        /* Rules Container - KOTAK */
+        .rules-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .rule-box {
+            background: rgba(139, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            border: 8px solid #ff6b6b;
+            border-radius: 70px;
+            padding: 40px;
+            transition: 0.3s;
+            box-shadow: 0 20px 0 #4a1a1a;
+        }
+        
+        .rule-box:hover {
+            border-color: gold;
+            box-shadow: 0 25px 0 #4a1a1a, 0 0 70px gold;
+            transform: scale(1.02) translateY(-5px);
+        }
+        
+        .rule-title {
+            font-size: 2.8rem;
+            color: #ff6b6b;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px red;
+        }
+        
+        .rule-list {
+            list-style: none;
+        }
+        
+        .rule-list li {
+            font-size: 1.6rem;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            border-left: 5px solid #ff69b4;
+        }
+        
+        /* Contact Card - KOTAK */
+        .contact-card {
+            background: linear-gradient(145deg, #2a1f2a, #1f1a2a);
+            border: 12px double #ff69b4;
+            border-radius: 100px;
+            padding: 60px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 30px 0 #4a1a2a, 0 50px 100px rgba(255,105,180,0.5);
+        }
+        
+        .contact-number {
+            font-size: 5rem;
+            color: #25d366;
+            text-shadow: 0 0 60px #25d366, 0 0 120px gold;
+            font-weight: 800;
+            letter-spacing: 4px;
+            background: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 90px;
+            display: inline-block;
+            margin: 30px 0;
+            border: 6px solid gold;
+        }
+        
+        /* Stats Card - KOTAK */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .stat-item {
+            background: rgba(255,215,0,0.1);
+            border: 8px solid gold;
+            border-radius: 60px;
+            padding: 40px 20px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 15px 0 #5a4a1a;
+        }
+        
+        .stat-item:hover {
+            transform: scale(1.1) translateY(-10px);
+            background: rgba(255,215,0,0.3);
+            box-shadow: 0 20px 0 #5a4a1a, 0 0 100px gold;
+        }
+        
+        .stat-value {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #ffd700;
+            text-shadow: 0 0 40px gold;
+        }
+        
+        .stat-label {
+            font-size: 1.8rem;
+            margin-top: 15px;
+        }
+        
+        /* Testimonials - KOTAK */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            border: 8px solid #ffb6c1;
+            border-radius: 80px;
+            padding: 40px;
+            font-size: 1.8rem;
+            transition: 0.3s;
+            position: relative;
+            box-shadow: 0 15px 0 #4a2a2a;
+        }
+        
+        .testimonial-card::before {
+            content: "⭐⭐⭐⭐⭐";
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            background: gold;
+            color: black;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 1.6rem;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateX(20px) translateY(-5px);
+            border-color: gold;
+            box-shadow: 0 20px 0 #4a2a2a, 0 0 80px gold;
+        }
+        
+        .testimonial-author {
+            margin-top: 20px;
+            color: #ffd700;
+            font-weight: 600;
+        }
+        
+        /* Message from Tante - KOTAK */
+        .tante-message {
+            background: linear-gradient(145deg, #ffb6c1, #ff69b4);
+            border-radius: 120px 120px 60px 60px;
+            padding: 80px;
+            text-align: center;
+            margin: 60px 0;
+            border: 12px double gold;
+            box-shadow: 0 30px 0 #8b4513, 0 0 200px rgba(255,105,180,0.7);
+            position: relative;
+        }
+        
+        .tante-message::before {
+            content: "😽😽😽😽😽";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            background: gold;
+            padding: 10px 40px;
+            border-radius: 60px;
+            color: black;
+        }
+        
+        .tante-message h2 {
+            font-size: 5rem;
+            color: white;
+            text-shadow: 0 0 60px gold;
+            margin-bottom: 40px;
+        }
+        
+        .tante-message p {
+            font-size: 2.2rem;
+            margin: 30px 0;
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 60px;
+            border: 2px solid white;
+        }
+        
+        .tante-signature {
+            font-size: 3rem;
+            color: gold;
+            text-shadow: 0 0 40px black;
+            margin-top: 40px;
+        }
+        
+        /* Footer - KOTAK */
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 120px;
+            border: 12px solid gold;
+            box-shadow: 0 20px 0 #4a3a1a;
+        }
+        
+        .footer h1 {
+            font-size: 4rem;
+            color: #ffd700;
+            text-shadow: 0 0 60px gold;
+            margin: 20px 0;
+        }
+        
+        .footer p {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            border-bottom: 3px dotted gold;
+        }
+        
+        .hashtags {
+            font-size: 2rem;
+            color: #ffb6c1;
+            margin: 40px 0;
+        }
+        
+        /* Top Up Money - KOTAK */
+        .topup-container {
+            background: rgba(255,215,0,0.15);
+            border-radius: 90px;
+            padding: 40px;
+            margin: 50px 0;
+            border: 10px solid gold;
+            box-shadow: 0 20px 0 #5a4a1a;
+            text-align: center;
+        }
+        
+        .topup-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .topup-item {
+            background: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 60px;
+            font-size: 2rem;
+            border: 6px solid gold;
+            box-shadow: 0 10px 0 #3a2a0a;
+            transition: 0.3s;
+        }
+        
+        .topup-item:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 15px 0 #3a2a0a, 0 0 60px gold;
+        }
+        
+        /* Kategori Kucing - KOTAK */
+        .kategori-container {
+            background: linear-gradient(145deg, #2a1a2a, #1f141f);
+            border-radius: 90px;
+            padding: 50px;
+            margin: 50px 0;
+            border: 12px solid #ffb6c1;
+            box-shadow: 0 20px 0 #3a1a2a;
+        }
+        
+        .kategori-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .kategori-item {
+            font-size: 2rem;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 50px;
+            border: 4px solid #ffb6c1;
+            transition: 0.3s;
+        }
+        
+        .kategori-item:hover {
+            transform: scale(1.05);
+            border-color: gold;
+            background: rgba(255,215,0,0.2);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .rank-grid, .features-grid, .stats-grid, .topup-grid, .kategori-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .rank-grid, .features-grid, .stats-grid, .rules-container, .testimonials, .topup-grid, .kategori-grid {
+                grid-template-columns: 1fr;
+            }
+            .server-info {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Emojis -->
+    <div class="floating-emoji" style="top: 10%; left: 5%; animation-delay: 0s;">🐱</div>
+    <div class="floating-emoji" style="top: 20%; right: 8%; animation-delay: 1s;">😺</div>
+    <div class="floating-emoji" style="top: 70%; left: 10%; animation-delay: 2s;">😸</div>
+    <div class="floating-emoji" style="top: 50%; right: 15%; animation-delay: 3s;">😻</div>
+    <div class="floating-emoji" style="top: 80%; left: 20%; animation-delay: 4s;">😽</div>
+    <div class="floating-emoji" style="top: 30%; left: 80%; animation-delay: 5s;">🙀</div>
+    <div class="floating-emoji" style="top: 90%; right: 25%; animation-delay: 6s;">😿</div>
+    <div class="floating-emoji" style="top: 15%; left: 90%; animation-delay: 7s;">😾</div>
+    <div class="floating-emoji" style="top: 60%; left: 30%; animation-delay: 8s;">🐈</div>
+
+    <div class="container">
+        
+        <!-- ASCII Art Header dengan Kotak -->
+        <div class="ascii-header">
+            ╔══════════════════════════════════════════════════════════════════╗<br>
+            ║                                                                  ║<br>
+            ║     ███████╗██╗     ██████╗  ██████╗ ██████╗ ██╗ █████╗        ║<br>
+            ║     ██╔════╝██║     ██╔══██╗██╔═══██╗██╔══██╗██║██╔══██╗       ║<br>
+            ║     █████╗  ██║     ██║  ██║██║   ██║██████╔╝██║███████║       ║<br>
+            ║     ██╔══╝  ██║     ██║  ██║██║   ██║██╔══██╗██║██╔══██║       ║<br>
+            ║     ███████╗███████╗██████╔╝╚██████╔╝██║  ██║██║██║  ██║       ║<br>
+            ║     ╚══════╝╚══════╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝       ║<br>
+            ║                                                                  ║<br>
+            ║              ███████╗5 ███████╗ ██████╗ ██████╗                 ║<br>
+            ║              ██╔════╝   ██╔════╝██╔═══██╗██╔══██╗               ║<br>
+            ║              █████╗     █████╗  ██║   ██║██████╔╝               ║<br>
+            ║              ██╔══╝     ██╔══╝  ██║   ██║██╔══██╗               ║<br>
+            ║              ███████╗   ██║     ╚██████╔╝██║  ██║               ║<br>
+            ║              ╚══════╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝               ║<br>
+            ║                                                                  ║<br>
+            ║                 ███████╗ ██████╗ ██████╗                        ║<br>
+            ║                 ██╔════╝██╔═══██╗██╔══██╗                       ║<br>
+            ║                 █████╗  ██║   ██║██████╔╝                       ║<br>
+            ║                 ██╔══╝  ██║   ██║██╔══██╗                       ║<br>
+            ║                 ██║     ╚██████╔╝██║  ██║                       ║<br>
+            ║                 ╚═╝      ╚═════╝ ╚═╝  ╚═╝                       ║<br>
+            ║                                                                  ║<br>
+            ╚══════════════════════════════════════════════════════════════════╝
+        </div>
+
+        <!-- Welcome Banner - Kotak -->
+        <div class="welcome-banner">
+            <h1>🌸 ELDORIA ECONOMIC S6 🌸</h1>
+            <h2>🐾 SERVER KUCING IMOET TERBAIK 🐾</h2>
+        </div>
+
+        <!-- Server Info Cards - Kotak -->
+        <div class="server-info">
+            <div class="info-card">
+                <div class="info-title">
+                    <span>🖥️</span> SERVER INFO
+                </div>
+                <div class="info-content">
+                    <p><span>🌐 IP:</span> basic-1.mineidhost.icu</p>
+                    <p><span>🔌 PORT:</span> 19147</p>
+                    <p><span>📡 VERSI:</span> Minecraft Java 1.20+</p>
+                    <p><span>🐱 TEMA:</span> Kucing Imoet & Estetik</p>
+                    <p><span>💎 STATUS:</span> ONLINE 24/7 ✨</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-title">
+                    <span>📢</span> CHANNEL SERVER
+                </div>
+                <div class="info-content">
+                    <p>🔗 https://whatsapp.com/channel/0029VbBXBTY5Ui2UlInztZ43</p>
+                    <p style="font-size: 1.4rem;">✨ JOIN UNTUK INFO UPDATE & EVENT ✨</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fitur Utama - Kotak -->
+        <div class="features-section">
+            <div class="section-title">🎮 FITUR UTAMA ELDORIA 🎮</div>
+            <div class="features-grid">
+                <div class="feature-item"><div class="feature-icon">🏪</div><div class="feature-name">Shop Basic</div><div class="feature-desc">Beli item kebutuhan sehari-hari</div></div>
+                <div class="feature-item"><div class="feature-icon">⬆️</div><div class="feature-name">Shop XP</div><div class="feature-desc">Upgrade level dengan mudah</div></div>
+                <div class="feature-item"><div class="feature-icon">🌍</div><div class="feature-name">Claim Land</div><div class="feature-desc">Lindungi area bangunanmu</div></div>
+                <div class="feature-item"><div class="feature-icon">👥</div><div class="feature-name">Clan</div><div class="feature-desc">Buat clan dan kumpulkan member</div></div>
+                <div class="feature-item"><div class="feature-icon">💰</div><div class="feature-name">Money</div><div class="feature-desc">Sistem ekonomi yang stabil</div></div>
+                <div class="feature-item"><div class="feature-icon">⚔️</div><div class="feature-name">PVP Area</div><div class="feature-desc">Bertarung hanya di area khusus</div></div>
+                <div class="feature-item"><div class="feature-icon">🏠</div><div class="feature-name">Sethome</div><div class="feature-desc">Set home di lokasi favorit</div></div>
+                <div class="feature-item"><div class="feature-icon">🎁</div><div class="feature-name">Daily Reward</div><div class="feature-desc">Claim reward setiap 3 jam</div></div>
+                <div class="feature-item"><div class="feature-icon">🎒</div><div class="feature-name">Start Kit</div><div class="feature-desc">Perlengkapan awal untuk member baru</div></div>
+                <div class="feature-item"><div class="feature-icon">🔄</div><div class="feature-name">TP Request</div><div class="feature-desc">Teleport ke teman dengan izin</div></div>
+                <div class="feature-item"><div class="feature-icon">🎲</div><div class="feature-name">Random TP</div><div class="feature-desc">Teleport random ke dunia</div></div>
+                <div class="feature-item"><div class="feature-icon">🎰</div><div class="feature-name">Gacha Gacha</div><div class="feature-desc">Coba hoki kamu di gacha</div></div>
+                <div class="feature-item"><div class="feature-icon">📊</div><div class="feature-name">Rank</div><div class="feature-desc">Naikkan rank dan dapatkan bonus</div></div>
+                <div class="feature-item"><div class="feature-icon">🦋</div><div class="feature-name">Shop Wings</div><div class="feature-desc">Koleksi sayap keren</div></div>
+                <div class="feature-item"><div class="feature-icon">📚</div><div class="feature-name">Custom Enchant</div><div class="feature-desc">Enchant item sesukamu</div></div>
+                <div class="feature-item"><div class="feature-icon">🎲</div><div class="feature-name">NPC Judi</div><div class="feature-desc">Coba keberuntungan di NPC judi</div></div>
+                <div class="feature-item"><div class="feature-icon">🏦</div><div class="feature-name">NPC Bank</div><div class="feature-desc">Simpan uangmu dengan aman</div></div>
+            </div>
+        </div>
+
+        <!-- Rank Kucing - Kotak -->
+        <div class="section-title">🐱 RANK KUCING ELDORIA 🐱</div>
+        <div class="rank-grid">
+            <div class="rank-card rank-dead">
+                <div class="rank-icon">🧟</div>
+                <div class="rank-name">DEAD RANK</div>
+                <div class="rank-price">Rp 5.000</div>
+                <div class="rank-bonus">💰 Bonus: 3.000.000 Money</div>
+                <div style="margin-top: 20px; font-size: 1.6rem;">🐱 Kucing Mati (Lucu tapi serem)</div>
+            </div>
+            <div class="rank-card rank-legend">
+                <div class="rank-icon">🐉</div>
+                <div class="rank-name">LEGEND RANK</div>
+                <div class="rank-price">Rp 25.000</div>
+                <div class="rank-bonus">💰 Bonus: 15.000.000 Money</div>
+                <div style="margin-top: 20px; font-size: 1.6rem;">🐱 Kucing Naga (Bersayap api)</div>
+            </div>
+            <div class="rank-card rank-diamond">
+                <div class="rank-icon">💎</div>
+                <div class="rank-name">DIAMOND RANK</div>
+                <div class="rank-price">Rp 45.000</div>
+                <div class="rank-bonus">💰 Bonus: 35.000.000 Money</div>
+                <div style="margin-top: 20px; font-size: 1.6rem;">🐱 Kucing Berlian (Bling bling)</div>
+            </div>
+            <div class="rank-card rank-vip">
+                <div class="rank-icon">👑</div>
+                <div class="rank-name">VIP RANK</div>
+                <div class="rank-price">Rp 67.000</div>
+                <div class="rank-bonus">💰 Bonus: 50.000.000 Money</div>
+                <div style="margin-top: 20px; font-size: 1.6rem;">🐱 Kucing Sultan (Pakai mahkota)</div>
+            </div>
+            <div class="rank-card rank-admin" style="grid-column: span 2;">
+                <div class="rank-icon">🛡️</div>
+                <div class="rank-name">ADMIN RANK</div>
+                <div class="rank-price">Rp 250.000</div>
+                <div class="rank-bonus">💰 Bonus: 240.000.000 Money</div>
+                <div style="margin-top: 20px; font-size: 1.6rem;">🐱 Kucing Admin (Paling berkuasa)</div>
+            </div>
+        </div>
+
+        <!-- Top Up Money - Kotak -->
+        <div class="topup-container">
+            <div style="font-size: 3.5rem; margin-bottom: 30px;">💰 TOP UP MONEY 💰</div>
+            <div class="topup-grid">
+                <div class="topup-item">💵 5K = 5M</div>
+                <div class="topup-item">💵 10K = 11M</div>
+                <div class="topup-item">💵 25K = 28M</div>
+                <div class="topup-item">💵 50K = 60M</div>
+            </div>
+        </div>
+
+        <!-- Rules - Kotak -->
+        <div class="rules-container">
+            <div class="rule-box">
+                <div class="rule-title">🚫 RULES GRUP 🚫</div>
+                <ul class="rule-list">
+                    <li>❌ Kirim stiker JMK, porn, kekerasan</li>
+                    <li>❌ Berkata rasis / SARA</li>
+                    <li>❌ Panggil admin "iraa" doang</li>
+                    <li>✅ WAJIB panggil "Tante Iraa" 🫶</li>
+                    <li>❌ Cabul / mesum di grup</li>
+                    <li>❌ No Gay (bukan benci, tp ga boleh bahas)</li>
+                    <li>❌ Kirim link tanpa izin Tante</li>
+                    <li>❌ Spam chat/stiker</li>
+                    <li>❌ Menyebarkan link grup lain</li>
+                    <li>⏰ GRUP DITUTUP MALAM (saat Tante bobo)</li>
+                </ul>
+            </div>
+            <div class="rule-box">
+                <div class="rule-title">📜 RULES SERVER 📜</div>
+                <ul class="rule-list">
+                    <li>🏠 Member base WAJIB claim land</li>
+                    <li>⚔️ PVP hanya di AREA PVP khusus</li>
+                    <li>🚫 Ga boleh rusuh di lobby</li>
+                    <li>🎁 Ambil daily reward tiap 3 jam</li>
+                    <li>❌ Ga boleh rusuh / berantem</li>
+                    <li>⚔️ TIDAK ADA WAR</li>
+                    <li>🥚 XP Farm? Spawner jangan di claim land</li>
+                    <li>🥺 Jangan selalu ngemis ke Tante</li>
+                    <li>🔍 Kerusuhan? Harus ada BUKTI KUAT</li>
+                    <li>😘 WAJIB sayang Tante Iraa</li>
+                    <li>🎤 JANGAN voice chat sembarangan</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact - Kotak -->
+        <div class="contact-card">
+            <div style="font-size: 3.5rem;">📞 HUBUNGI TANTE IRAA 📞</div>
+            <div class="contact-number">0823-4335-1581</div>
+            <div style="font-size: 2rem; margin: 30px 0;">🕒 Jam Operasi: 08.00 - 22.00 WIB</div>
+            <div style="font-size: 2rem; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 60px; border: 6px solid gold;">
+                ⚠️ UNTUK: Pembelian rank • Custom rank • Laporan bug • Curhat (jangan lebay)
+            </div>
+            <div style="font-size: 2.5rem; margin-top: 40px; color: gold;">🫶 PANGGIL DENGAN "Tante Iraa" YA! 🫶</div>
+        </div>
+
+        <!-- Kategori Kucing - Kotak -->
+        <div class="kategori-container">
+            <div style="font-size: 3.5rem; text-align: center; margin-bottom: 40px;">🐈 KATEGORI KUCING ELDORIA 🐈</div>
+            <div class="kategori-grid">
+                <div class="kategori-item">😺 Kucing Biasa → Member baru</div>
+                <div class="kategori-item">🐱 Kucing Gemoy → Aktif di chat</div>
+                <div class="kategori-item">😸 Kucing Lucu → Rank Dead</div>
+                <div class="kategori-item">😻 Kucing Imut → Rank Legend</div>
+                <div class="kategori-item">🐈 Kucing Belang → Rank Diamond</div>
+                <div class="kategori-item">🐆 Kucing Macan → Rank VIP</div>
+                <div class="kategori-item">🦁 Kucing Singa → Rank Admin</div>
+                <div class="kategori-item">🐅 Kucing Harimau → Tante Iraa (THE BOSS)</div>
+            </div>
+        </div>
+
+        <!-- Stats - Kotak -->
+        <div class="stats-grid">
+            <div class="stat-item"><div class="stat-value">1.234</div><div class="stat-label">🐱 MEMBER</div></div>
+            <div class="stat-item"><div class="stat-value">56</div><div class="stat-label">🟢 ONLINE</div></div>
+            <div class="stat-item"><div class="stat-value">12.3B</div><div class="stat-label">💰 TOTAL MONEY</div></div>
+            <div class="stat-item"><div class="stat-value">567</div><div class="stat-label">🏠 CLAIMED LAND</div></div>
+        </div>
+
+        <!-- Testimonials - Kotak -->
+        <div class="testimonials">
+            <div class="testimonial-card">
+                "Servernya enak, gak lemot, Tante nya baik"
+                <div class="testimonial-author">— KucingPemula</div>
+            </div>
+            <div class="testimonial-card">
+                "Rank Legend worth it banget, bonus 15M!"
+                <div class="testimonial-author">— DragonSlayer</div>
+            </div>
+            <div class="testimonial-card">
+                "Tante Iraa emang paling gemoy, grup nya asik"
+                <div class="testimonial-author">— SiKucingImoet</div>
+            </div>
+            <div class="testimonial-card">
+                "Udah 1 tahun main, betah terus"
+                <div class="testimonial-author">— made by dito</div>
+            </div>
+        </div>
+
+        <!-- Message from Tante - Kotak -->
+        <div class="tante-message">
+            <h2>🥺 PESAN DARI TANTE IRAA 🥺</h2>
+            <p>Halo anak-anak kucing Tante yang imoet-imuut...</p>
+            <p>Terima kasih udah mau main di server Eldoria S6 ini.</p>
+            <p>Tante bikin server ini dengan ❤️ buat kalian semua.</p>
+            <p>✔️ Panggil Tante dengan "Tante Iraa"<br>✔️ Patuhi peraturan<br>✔️ Sayang Tante (wajib!)<br>✔️ Happy mining & building!</p>
+            <p>Kalo ada masalah, langsung chat Tante aja.<br>Tante baca kok... pas lagi ga bobo. 😘</p>
+            <p>💤 Tante mau bobo dulu... nanti kita lanjut lagi.<br>Grup ditutup dulu ya, jangan rame-rame.</p>
+            <div class="tante-signature">Love you my little kittens! 🫶😽💤<br>— Tante Iraa</div>
+        </div>
+
+        <!-- Footer - Kotak -->
+        <div class="footer">
+            <div style="font-size: 3rem;">🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾</div>
+            <h1>😽 ELDORIA ECONOMIC S6 — WHERE CATS RULE! 😽</h1>
+            <div style="font-size: 3rem;">🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾</div>
+            
+            <h1>🌸 JOIN NOW! LIMITED SLOT! 🌸</h1>
+            <p>🌐 IP: basic-1.mineidhost.icu | 🔌 PORT: 19147</p>
+            <p>📢 Channel: https://whatsapp.com/channel/0029VbBXBTY5Ui2UlInztZ43</p>
+            
+            <div class="hashtags">
+                ✨ #EldoriaS6 #MinecraftServer #KucingImoet #TanteIraa #EconomicServer ✨
+            </div>
+            <p style="font-size: 3rem; color: gold;">💖 DATANG SEBAGAI KUCING, PULANG SEBAGAI SINGA 💖</p>
+        </div>
+    </div>
+</body>
+</html>
